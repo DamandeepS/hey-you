@@ -2,6 +2,13 @@
   "name": "hey-you",
   "description": "Yes you",
   "dependencies": {
+    "@polymer/app-layout": "^3.0.0-pre.19",
+    "@polymer/app-route": "^3.0.0-pre.19",
+    "@polymer/app-storage": "^3.0.0-pre.19",
+    "@polymer/iron-ajax": "^3.0.0-pre.19",
+    "@polymer/iron-icons": "^3.0.0-pre.19",
+    "@polymer/paper-icon-button": "^3.0.0-pre.19",
+    "@polymer/paper-input": "^3.0.0-pre.19",
     "@polymer/polymer": "^3.0.0"
   },
   "devDependencies": {
