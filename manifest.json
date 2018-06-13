@@ -1,0 +1,7 @@
+{
+  "name": "hey-you",
+  "short_name": "hey-you",
+  "description": "Yes you",
+  "start_url": "/",
+  "display": "standalone"
+}
