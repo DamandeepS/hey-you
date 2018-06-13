@@ -69,8 +69,8 @@ class UpdateView extends PolymerElement {
   }
 
   saveToLS(e) {
-    localStorage.setItem('fname', this.fname);
-    localStorage.setItem('lname', this.lname);
+    localStorage.setItem('fname', "\""+this.fname+"\"");
+    localStorage.setItem('lname', "\""+this.lname+"\"");
     localStorage.setItem('timestamp', Date.now());
   }
 }

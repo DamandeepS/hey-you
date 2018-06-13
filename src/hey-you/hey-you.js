@@ -4,6 +4,7 @@ import '@polymer/paper-icon-button/paper-icon-button.js';
 import '@polymer/iron-icons/iron-icons.js';
 import '@polymer/iron-pages/iron-pages.js';
 import '../update-view/update-view.js';
+import '../profile-view/profile-view.js';
 
 /**
  * @customElement
@@ -76,6 +77,7 @@ class HeyYou extends PolymerElement {
           <div id="content">
             <iron-pages selected="[[page]]" attr-for-selected="name">
               <update-view name="update"></update-view>
+              <profile-view name="profile"></profile-view>
             </iron-pages>
           </div>
 

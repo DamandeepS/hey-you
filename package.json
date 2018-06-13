@@ -11,7 +11,8 @@
     "@polymer/paper-fab": "^3.0.0-pre.19",
     "@polymer/paper-icon-button": "^3.0.0-pre.19",
     "@polymer/paper-input": "^3.0.0-pre.19",
-    "@polymer/polymer": "^3.0.0"
+    "@polymer/polymer": "^3.0.0",
+    "polymer-relative-time": "^1.0.1"
   },
   "devDependencies": {
     "@webcomponents/webcomponentsjs": "^2.0.0",
