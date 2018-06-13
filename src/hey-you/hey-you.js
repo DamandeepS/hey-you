@@ -2,6 +2,8 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 import '@polymer/app-layout/app-layout.js';
 import '@polymer/paper-icon-button/paper-icon-button.js';
 import '@polymer/iron-icons/iron-icons.js';
+import '@polymer/iron-pages/iron-pages.js';
+import '../update-view/update-view.js';
 
 /**
  * @customElement
@@ -47,6 +49,10 @@ class HeyYou extends PolymerElement {
         color: black;
         font-weight: bold;
       }
+
+      #content {
+        height: calc(100vh - 64px)
+      }
       </style>
 
 
@@ -67,7 +73,11 @@ class HeyYou extends PolymerElement {
             </app-toolbar>
           </app-header>
 
-          main content
+          <div id="content">
+            <iron-pages selected="[[page]]" attr-for-selected="name">
+              <update-view name="update"></update-view>
+            </iron-pages>
+          </div>
 
         </app-header-layout>
       </app-drawer-layout>
@@ -78,6 +88,10 @@ class HeyYou extends PolymerElement {
       prop1: {
         type: String,
         value: 'hey-you'
+      },
+      page: {
+        type: String,
+        value:'update'
       }
     };
   }
