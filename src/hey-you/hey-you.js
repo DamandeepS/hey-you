@@ -5,6 +5,8 @@ import '@polymer/iron-icons/iron-icons.js';
 import '@polymer/iron-pages/iron-pages.js';
 import '../update-view/update-view.js';
 import '../profile-view/profile-view.js';
+import '@polymer/app-route/app-route.js';
+import '@polymer/app-route/app-location.js';
 
 /**
  * @customElement
@@ -56,6 +58,13 @@ class HeyYou extends PolymerElement {
       }
       </style>
 
+      <app-location route={{route}}></app-location>
+      <app-route
+          route="{{route}}"
+          pattern="/:page"
+          data="{{data}}"
+          tail="{{tail}}">
+      </app-route>
 
       <app-drawer-layout>
         <app-drawer slot="drawer">
@@ -94,11 +103,22 @@ class HeyYou extends PolymerElement {
       page: {
         type: String,
         value:'update'
-      }
+      },
+      data: Object
     };
   }
 
+  static get observers() {
+    return [
+      '_observeRouteData(data.page)'
+    ]
+  }
 
+  _observeRouteData(page) {
+    if(['update','profile'].indexOf(page)>-1)
+      this.set('page', page)
+    else this.set('page', 'update')
+  }
 }
 
 window.customElements.define('hey-you', HeyYou);
