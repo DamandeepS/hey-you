@@ -69,7 +69,9 @@ class UpdateView extends PolymerElement {
   }
 
   saveToLS(e) {
-    localStorage.setItem('details', JSON.stringify({fname: this.fname,lname: this.lname, timestamp: Date.now()}))
+    localStorage.setItem('fname', this.fname);
+    localStorage.setItem('lname', this.lname);
+    localStorage.setItem('timestamp', Date.now());
   }
 }
 
