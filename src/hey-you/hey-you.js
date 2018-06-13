@@ -59,7 +59,7 @@ class HeyYou extends PolymerElement {
           <app-header reveals>
             <app-toolbar>
               <paper-icon-button icon="menu"  drawer-toggle></paper-icon-button>
-              <div main-title>My app</div>
+              <div main-title>{{prop1}}</div>
               <paper-icon-button icon="delete"></paper-icon-button>
               <paper-icon-button icon="search"></paper-icon-button>
               <paper-icon-button icon="close"></paper-icon-button>
