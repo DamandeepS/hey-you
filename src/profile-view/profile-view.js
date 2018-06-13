@@ -41,7 +41,6 @@ class ProfileView extends PolymerElement {
       <app-localstorage-document key='timestamp' data="{{timestamp}}"></app-localstorage-document>
     `;
   }
-
 }
 
 customElements.define('profile-view', ProfileView);

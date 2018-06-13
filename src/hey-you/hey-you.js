@@ -7,6 +7,7 @@ import '../update-view/update-view.js';
 import '../profile-view/profile-view.js';
 import '@polymer/app-route/app-route.js';
 import '@polymer/app-route/app-location.js';
+import '@polymer/iron-selector/iron-selector.js';
 
 /**
  * @customElement
@@ -66,9 +67,14 @@ class HeyYou extends PolymerElement {
           tail="{{tail}}">
       </app-route>
 
-      <app-drawer-layout>
+      <app-drawer-layout id="drawerLayout">
         <app-drawer slot="drawer">
-          drawer-content
+        <app-toolbar>Links</app-toolbar>
+          <iron-selector selected=[[page]] attr-for-selected="name" class="drawer-list">
+            <a name="update" href="/update">Update</a>
+            <a name="profile" href="/profile">Profile</a>
+          </div>
+
         </app-drawer>
         <app-header-layout>
 
@@ -117,7 +123,9 @@ class HeyYou extends PolymerElement {
   _observeRouteData(page) {
     if(['update','profile'].indexOf(page)>-1)
       this.set('page', page)
-    else this.set('page', 'update')
+    else this.set('page', 'update');
+    if(!this.$.drawerLayout.drawer.persistent)
+    this.$.drawerLayout.drawer.close();
   }
 }
 
